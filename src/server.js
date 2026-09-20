@@ -67,6 +67,13 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model('User', userSchema);
 
 // Routes
+app.get('/', (req, res) => {
+  res.json({ 
+    status: 'OK', 
+    message: 'Backend API is running',
+    timestamp: new Date().toISOString(),
+  });
+});
 app.get('/api/health', (req, res) => {
   res.json({ 
     status: 'OK', 
